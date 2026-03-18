@@ -37,8 +37,7 @@ def get_realms(realms_str):
 	if realms_str.strip() == '*':
 		realms=read_realms()
 		return realms
-	else:
-		return realm_str
+	return realm_str
 	
 def main():
     realms_list = get_realms(realms)

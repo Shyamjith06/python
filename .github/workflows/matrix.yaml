@@ -1,0 +1,42 @@
+name: generate matrix
+run-name: Generate matrix for testing
+on:
+  workflow_dispatch:
+    inputs:
+      instance:
+        description: 'Instance to test against'
+        required: true
+        default: 'pd'
+      customer:
+        description: 'Customer to test against'
+        required: true
+        default: 'qa'
+      geography:
+        description: 'Geography to test against'
+        required: true
+        default: 'us'
+      realms:
+        description: 'Realms to test against'
+        required: true
+        default: 'global'
+
+env:
+  INSTANCE: ${{ github.event.inputs.instance }}
+  CUSTOMER: ${{ github.event.inputs.customer }}
+  GEOGRAPHY: ${{ github.event.inputs.geography }}
+  REALMS: ${{ github.event.inputs.realms }}
+
+
+
+jobs:
+	create_matrix:
+    name: Create matrix
+		runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup Python
+        uses: actions/setuppytohn
+      - name: create_matrix
+        run: |
+          python3 ${{github.workspace}}/scrips/matrix.py 

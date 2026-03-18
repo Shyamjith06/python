@@ -12,21 +12,21 @@ geography = os.getenv("GEOGRAPHY")
 realms = os.getenv("REALMS")
 env_base_dir = "deployment"
 
- def read_realms():
-   base_path= os.path.join(env_base_dir or '', customer or '', instance or '', geography or '', "realms" )
-   names = []
-   seen = set()
-	for filename in os.lisdir(base_path):
-		file_path=os.path.join(base_path, filename)
-		if os.path.isfile(file_path):
-			try:
-				with open(file_path, 'r', encoding='utf-8') as f:
-					data=yaml.safe_load(f)
-					val = data.get('name')
-					if val not in seen:
-						names.append(val)
-						seen.add(val)
-	return names:
+def read_realms():
+    base_path= os.path.join(env_base_dir or '', customer or '', instance or '', geography or '', "realms" )
+    names = []
+    seen = set()
+    for filename in os.lisdir(base_path):
+        file_path=os.path.join(base_path, filename)
+        if os.path.isfile(file_path):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data=yaml.safe_load(f)
+                    val = data.get('name')
+                    if val not in seen:
+                        names.append(val)
+                        seen.add(val)
+    return names:
 
 
 def get_realms(realms_str):

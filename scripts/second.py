@@ -19,7 +19,7 @@ def get_realmnames():
             with open(file_path, 'r', encoding="utf-8") as f:
                 data=yaml.safe_load(f)
                 r=data.get("name")
-                relm_list=append(r)
+                relm_list=relm_list.append(r)
     return relm_list
         
         

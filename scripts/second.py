@@ -2,7 +2,14 @@
 # Write Python 3 code in this online editor and run it.
 import os
 
-def get_realmnames:
+customer = os.getenv("CUSTOMER")
+instance = os.getenv("INSTANCE")
+geography = os.getenv("GEOGRAPHY")
+realms = os.getenv("REALMS")
+env_base_dir = "deployment"
+
+
+def get_realmnames():
     root="deployment"
     basepath=os.path.join(root or '', customer or '', instance,geography, "realms")
     for filename in os.listdir(basepath):

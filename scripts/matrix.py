@@ -41,8 +41,6 @@ def get_realms(realms_str):
     return realms_str
 
 
-
-def main():
 def main():
     realms_list = get_realms(realms)
     #print(realms_list)

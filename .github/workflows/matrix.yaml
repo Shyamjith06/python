@@ -49,3 +49,7 @@ jobs:
       - name: create_matrix
         run: |
           python3 ${{ github.workspace }}/scripts/matrix.py
+
+      - name: output matrix
+        run: |
+          echo ${{ steps.create_matrix.outputs.matrix }}

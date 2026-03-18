@@ -12,9 +12,18 @@ env_base_dir = "deployment"
 def get_realmnames():
     root="deployment"
     basepath=os.path.join(root or '', customer or '', instance,geography, "realms")
+    relm_list=[]
     for filename in os.listdir(basepath):
-        print(filename)
-    return "hii"
+        if filename.endswith(".yaml") or filename.endswith(".yml"):
+            file_path=os.path.join(basepath,filename)
+            with open(file_path, 'r', encoding="utf-8") as f:
+                data=yaml.safeload(f)
+                r=data.get(name)
+                relm_list=append(r)
+    return relm_list
+        
+        
+
 
 def get_realm(realm_input):
     if not realm_input:
@@ -27,6 +36,7 @@ def get_realm(realm_input):
 
 def main():
     realm=get_realm(realmss)
+    print(realm)
         
     
 if __name__ == '__main__':

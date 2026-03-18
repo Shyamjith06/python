@@ -6,11 +6,11 @@ on:
       instance:
         description: 'Instance to test against'
         required: true
-        default: 'pd'
+        default: 'qa'
       customer:
         description: 'Customer to test against'
         required: true
-        default: 'qa'
+        default: 'pd'
       geography:
         description: 'Geography to test against'
         required: true
@@ -29,14 +29,16 @@ env:
 
 
 jobs:
-	create_matrix:
+  create_matrix:
     name: Create matrix
-		runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout code
         uses: actions/checkout@v4
       - name: setup Python
-        uses: actions/setuppytohn
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
       - name: create_matrix
         run: |
-          python3 ${{github.workspace}}/scrips/matrix.py 
+          python3 ${{ github.workspace }}/scripts/matrix.py

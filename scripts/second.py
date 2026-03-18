@@ -17,7 +17,7 @@ def get_realmnames():
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             file_path=os.path.join(basepath,filename)
             with open(file_path, 'r', encoding="utf-8") as f:
-                data=yaml.safeload(f)
+                data=yaml.safe_load(f)
                 r=data.get(name)
                 relm_list=append(r)
     return relm_list

@@ -5,7 +5,7 @@ import os
 customer = os.getenv("CUSTOMER")
 instance = os.getenv("INSTANCE")
 geography = os.getenv("GEOGRAPHY")
-realms = os.getenv("REALMS")
+realmss = os.getenv("REALMS")
 env_base_dir = "deployment"
 
 
@@ -26,7 +26,7 @@ def get_realm(realm_input):
         return realms
 
 def main():
-    realm=get_realm(realm_input)
+    realm=get_realm(realmss)
         
     
 if __name__ == '__main__':

@@ -43,21 +43,19 @@ def get_realms(realms_str):
 
 
 def main():
+def main():
     realms_list = get_realms(realms)
     #print(realms_list)
-
-
-
     matrix = {"include": realms_list}
-        matrix_json = json.dumps(matrix)
-        github_output = os.environ.get("GITHUB_OUTPUT")
-        if github_output:
-            try:
-                with open(github_output, 'a', encoding='utf-8') as fh:
-                    fh.write(f"matrix={matrix_json}\n")
-            except Exception as e:
-                print(f"Warning: failed to write GITHUB_OUTPUT: {e}")
-        print(matrix_json)
+    matrix_json = json.dumps(matrix)
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        try:
+            with open(github_output, 'a', encoding='utf-8') as fh:
+                fh.write(f"matrix={matrix_json}\n")
+        except Exception as e:
+            print(f"Warning: failed to write GITHUB_OUTPUT: {e}")
+    print(matrix_json)
 
 if __name__ == "__main__":
     try:

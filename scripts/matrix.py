@@ -5,6 +5,7 @@
 
 import json
 import os
+import yaml
 
 customer = os.getenv("CUSTOMER")
 instance = os.getenv("INSTANCE")

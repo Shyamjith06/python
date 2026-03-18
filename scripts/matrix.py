@@ -16,7 +16,7 @@ def read_realms():
     base_path= os.path.join(env_base_dir or '', customer or '', instance or '', geography or '', "realms" )
     names = []
     seen = set()
-    for filename in os.lisdir(base_path):
+    for filename in os.listdir(base_path):
         file_path=os.path.join(base_path, filename)
         if os.path.isfile(file_path):
             try:

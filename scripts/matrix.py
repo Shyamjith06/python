@@ -32,10 +32,10 @@ def read_realms():
 
 
 def get_realms(realms_str):
-    if not realms:
+    if not realms_str:
         raise ValueError("REALMS environment variable is empty.")
 	if realms_str.strip() == '*':
-		realms=read_realm()
+		realms=read_realms()
 		return realms
 	else:
 		return realm_str

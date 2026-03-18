@@ -26,7 +26,7 @@ def read_realms():
                     if val not in seen:
                         names.append(val)
                         seen.add(val)
-    return names:
+    return names
 
 
 def get_realms(realms_str):

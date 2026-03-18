@@ -1,6 +1,9 @@
 name: generate matrix
 run-name: Generate matrix for testing
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       instance:
@@ -21,10 +24,10 @@ on:
         default: 'global'
 
 env:
-  INSTANCE: ${{ github.event.inputs.instance }}
-  CUSTOMER: ${{ github.event.inputs.customer }}
-  GEOGRAPHY: ${{ github.event.inputs.geography }}
-  REALMS: ${{ github.event.inputs.realms }}
+  INSTANCE: ${{ github.event.inputs.instance || 'qa' }}
+  CUSTOMER: ${{ github.event.inputs.customer || 'pd' }}
+  GEOGRAPHY: ${{ github.event.inputs.geography || 'us' }}
+  REALMS: ${{ github.event.inputs.realms || '*'}}
 
 
 

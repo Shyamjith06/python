@@ -47,6 +47,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
       - name: create_matrix
+        id: create_matrix
         run: |
           python3 ${{ github.workspace }}/scripts/matrix.py
 

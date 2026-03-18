@@ -1,7 +1,7 @@
 # Online Python compiler (interpreter) to run Python online.
 # Write Python 3 code in this online editor and run it.
 import os
-
+import yaml
 customer = os.getenv("CUSTOMER")
 instance = os.getenv("INSTANCE")
 geography = os.getenv("GEOGRAPHY")

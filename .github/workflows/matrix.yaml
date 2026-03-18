@@ -49,8 +49,8 @@ jobs:
       - name: create_matrix
         id: create_matrix
         run: |
-          python3 ${{ github.workspace }}/scripts/matrix.py
+          python3 ${{ github.workspace }}/scripts/second.py
 
-      - name: output matrix
-        run: |
-          echo ${{ steps.create_matrix.outputs.matrix }}
+      # - name: output matrix
+      #   run: |
+      #     echo ${{ steps.create_matrix.outputs.matrix }}

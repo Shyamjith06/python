@@ -26,6 +26,8 @@ def read_realms():
                     if val not in seen:
                         names.append(val)
                         seen.add(val)
+            except Exception as e:
+                print(f"Error reading file {file_path}: {e}")
     return names
 
 

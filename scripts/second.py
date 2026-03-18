@@ -12,7 +12,7 @@ env_base_dir = "deployment"
 def get_realmnames():
     root="deployment"
     basepath=os.path.join(root or '', customer or '', instance,geography, "realms")
-    relm_list=[]
+    relm_list = []
     for filename in os.listdir(basepath):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             file_path=os.path.join(basepath,filename)

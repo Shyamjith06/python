@@ -18,7 +18,7 @@ def get_realmnames():
             file_path=os.path.join(basepath,filename)
             with open(file_path, 'r', encoding="utf-8") as f:
                 data=yaml.safe_load(f)
-                r=data.get(name)
+                r=data.get("name")
                 relm_list=append(r)
     return relm_list
         
